@@ -130,70 +130,6 @@ define('ui/components/machine/driver-p2pub/component', ['exports', 'ember', 'ui/
                 "value": "VB8-24"
               },
               {
-                "label": "VG1-3",
-                "value": "VG1-3"
-              },
-              {
-                "label": "VG2-6",
-                "value": "VG2-6"
-              },
-              {
-                "label": "VG4-12",
-                "value": "VG4-12"
-              },
-              {
-                "label": "VG6-24",
-                "value": "VG6-24"
-              },
-              {
-                "label": "VG8-32",
-                "value": "VG8-32"
-              },
-              {
-                "label": "VG12-48",
-                "value": "VG12-48"
-              },
-              {
-                "label": "VG2-3",
-                "value": "VG2-3"
-              },
-              {
-                "label": "VG4-6",
-                "value": "VG4-6"
-              },
-              {
-                "label": "VG6-12",
-                "value": "VG6-12"
-              },
-              {
-                "label": "VG8-24",
-                "value": "VG8-24"
-              },
-              {
-                "label": "VG12-32",
-                "value": "VG12-32"
-              },
-              {
-                "label": "VG1-6",
-                "value": "VG1-6"
-              },
-              {
-                "label": "VG2-12",
-                "value": "VG2-12"
-              },
-              {
-                "label": "VG4-24",
-                "value": "VG4-24"
-              },
-              {
-                "label": "VG6-32",
-                "value": "VG6-32"
-              },
-              {
-                "label": "VG8-48",
-                "value": "VG8-48"
-              },
-              {
                 "label": "VD16-96-SSD",
                 "value": "VD16-96-SSD"
               },
@@ -264,78 +200,6 @@ define('ui/components/machine/driver-p2pub/component', ['exports', 'ember', 'ui/
               {
                 "label": "VG8-48",
                 "value": "VG8-48"
-              },
-              {
-                "label": "VB0-1",
-                "value": "VB0-1"
-              },
-              {
-                "label": "VB1-2",
-                "value": "VB1-2"
-              },
-              {
-                "label": "VB2-3",
-                "value": "VB2-3"
-              },
-              {
-                "label": "VB4-6",
-                "value": "VB4-6"
-              },
-              {
-                "label": "VB8-12",
-                "value": "VB8-12"
-              },
-              {
-                "label": "VB12-24",
-                "value": "VB12-24"
-              },
-              {
-                "label": "VB1-1",
-                "value": "VB1-1"
-              },
-              {
-                "label": "VB2-2",
-                "value": "VB2-2"
-              },
-              {
-                "label": "VB4-3",
-                "value": "VB4-3"
-              },
-              {
-                "label": "VB8-6",
-                "value": "VB8-6"
-              },
-              {
-                "label": "VB12-12",
-                "value": "VB12-12"
-              },
-              {
-                "label": "VB0-2",
-                "value": "VB0-2"
-              },
-              {
-                "label": "VB1-3",
-                "value": "VB1-3"
-              },
-              {
-                "label": "VB2-6",
-                "value": "VB2-6"
-              },
-              {
-                "label": "VB4-12",
-                "value": "VB4-12"
-              },
-              {
-                "label": "VB8-24",
-                "value": "VB8-24"
-              },
-              {
-                "label": "VD16-96-SSD",
-                "value": "VD16-96-SSD"
-              },
-              {
-                "label": "VD16-192-FIPX",
-                "value": "VD16-192-FIPX"
               }
             ]
           },
@@ -475,7 +339,7 @@ define('ui/components/machine/driver-p2pub/component', ['exports', 'ember', 'ui/
         dataStorage: '',
 
         //Network
-        privateMode: 'false',
+        privateMode: '',
         dockerPort: 2376,
 
         extraPorts: "500/udp,4500/udp",
@@ -1686,7 +1550,7 @@ exports["default"] = Ember.HTMLBars.template((function() {
       dom.appendChild(el4, el5);
       var el5 = dom.createElement("p");
       dom.setAttribute(el5,"class","help-block");
-      var el6 = dom.createTextNode("Uses private network (does not attach global IP and setup default gateway and DNS.)\"");
+      var el6 = dom.createTextNode("Does not attach global IP address. Specify a private IP address and a DNS server like this format \"Private IP address, DNS Server IP address\".");
       dom.appendChild(el5, el6);
       dom.appendChild(el4, el5);
       var el5 = dom.createTextNode("\n      ");
@@ -1857,7 +1721,7 @@ exports["default"] = Ember.HTMLBars.template((function() {
       ["attribute","disabled",["get","dataStorageDisable",["loc",[null,[205,30],[205,48]]],0,0,0,0],0,0,0,0],
       ["block","each",[["get","model.static.dataStorageType.types",["loc",[null,[207,16],[207,50]]],0,0,0,0]],[],4,null,["loc",[null,[207,8],[209,17]]]],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.ibb",["loc",[null,[221,14],[221,35]]],0,0,0,0]],[],[],0,0],"disabled",["subexpr","@mut",[["get","ibbDisable",["loc",[null,[222,17],[222,27]]],0,0,0,0]],[],[],0,0],"maxlength",11,"placeholder","ibbXXXXXXXX"],["loc",[null,[219,8],[225,10]]],0,0],
-      ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.privateMode",["loc",[null,[240,14],[240,43]]],0,0,0,0]],[],[],0,0],"maxlength",5],["loc",[null,[238,8],[242,10]]],0,0],
+      ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.privateMode",["loc",[null,[240,14],[240,43]]],0,0,0,0]],[],[],0,0],"placeholder","X.X.X.X,Y.Y.Y.Y"],["loc",[null,[238,8],[242,10]]],0,0],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.dockerPort",["loc",[null,[251,14],[251,42]]],0,0,0,0]],[],[],0,0],"maxlength",5],["loc",[null,[249,8],[253,10]]],0,0],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.extraPorts",["loc",[null,[264,14],[264,42]]],0,0,0,0]],[],[],0,0]],["loc",[null,[262,8],[265,10]]],0,0],
       ["inline","partial",["host/add-options"],[],["loc",[null,[272,4],[272,34]]],0,0],
