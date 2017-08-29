@@ -339,7 +339,7 @@ define('ui/components/machine/driver-%%DRIVERNAME%%/component', ['exports', 'emb
         dataStorage: '',
 
         //Network
-        privateMode: '',
+        privateOnly: '',
         dockerPort: 2376,
 
         extraPorts: "500/udp,4500/udp",
@@ -459,7 +459,7 @@ define('ui/components/machine/driver-%%DRIVERNAME%%/component', ['exports', 'emb
 
       console.debug('ibb=' + this.get('model.%%DRIVERNAME%%Config.ibb'));
       console.debug('dataStorage=' + this.get('model.%%DRIVERNAME%%Config.dataStorage'));
-      console.debug('privateMode=' + this.get('model.%%DRIVERNAME%%Config.privateMode'));
+      console.debug('privateOnly=' + this.get('model.%%DRIVERNAME%%Config.privateOnly'));
       console.debug('iba=' + this.get('model.%%DRIVERNAME%%Config.iba'));
       console.debug('dockerPort=' + this.get('model.%%DRIVERNAME%%Config.dockerPort'));
 

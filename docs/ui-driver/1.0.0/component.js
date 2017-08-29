@@ -339,7 +339,7 @@ define('ui/components/machine/driver-p2pub/component', ['exports', 'ember', 'ui/
         dataStorage: '',
 
         //Network
-        privateMode: '',
+        privateOnly: '',
         dockerPort: 2376,
 
         extraPorts: "500/udp,4500/udp",
@@ -459,7 +459,7 @@ define('ui/components/machine/driver-p2pub/component', ['exports', 'ember', 'ui/
 
       console.debug('ibb=' + this.get('model.p2pubConfig.ibb'));
       console.debug('dataStorage=' + this.get('model.p2pubConfig.dataStorage'));
-      console.debug('privateMode=' + this.get('model.p2pubConfig.privateMode'));
+      console.debug('privateOnly=' + this.get('model.p2pubConfig.privateOnly'));
       console.debug('iba=' + this.get('model.p2pubConfig.iba'));
       console.debug('dockerPort=' + this.get('model.p2pubConfig.dockerPort'));
 
@@ -1532,7 +1532,7 @@ exports["default"] = Ember.HTMLBars.template((function() {
       dom.appendChild(el4, el5);
       var el5 = dom.createElement("label");
       dom.setAttribute(el5,"class","form-control-static");
-      var el6 = dom.createTextNode("Private Mode");
+      var el6 = dom.createTextNode("Private NW Only");
       dom.appendChild(el5, el6);
       dom.appendChild(el4, el5);
       var el5 = dom.createTextNode("\n      ");
@@ -1550,7 +1550,7 @@ exports["default"] = Ember.HTMLBars.template((function() {
       dom.appendChild(el4, el5);
       var el5 = dom.createElement("p");
       dom.setAttribute(el5,"class","help-block");
-      var el6 = dom.createTextNode("Does not attach global IP address. Specify a private IP address and a DNS server like this format \"Private IP address, DNS Server IP address\".");
+      var el6 = dom.createTextNode("Specify a private IP address and a DNS server like this format \"Private IP address, DNS Server IP address\". If this option specified, global IP address is not attached.");
       dom.appendChild(el5, el6);
       dom.appendChild(el4, el5);
       var el5 = dom.createTextNode("\n      ");
@@ -1721,7 +1721,7 @@ exports["default"] = Ember.HTMLBars.template((function() {
       ["attribute","disabled",["get","dataStorageDisable",["loc",[null,[205,30],[205,48]]],0,0,0,0],0,0,0,0],
       ["block","each",[["get","model.static.dataStorageType.types",["loc",[null,[207,16],[207,50]]],0,0,0,0]],[],4,null,["loc",[null,[207,8],[209,17]]]],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.ibb",["loc",[null,[221,14],[221,35]]],0,0,0,0]],[],[],0,0],"disabled",["subexpr","@mut",[["get","ibbDisable",["loc",[null,[222,17],[222,27]]],0,0,0,0]],[],[],0,0],"maxlength",11,"placeholder","ibbXXXXXXXX"],["loc",[null,[219,8],[225,10]]],0,0],
-      ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.privateMode",["loc",[null,[240,14],[240,43]]],0,0,0,0]],[],[],0,0],"placeholder","X.X.X.X,Y.Y.Y.Y"],["loc",[null,[238,8],[242,10]]],0,0],
+      ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.privateOnly",["loc",[null,[240,14],[240,43]]],0,0,0,0]],[],[],0,0],"placeholder","X.X.X.X,Y.Y.Y.Y"],["loc",[null,[238,8],[242,10]]],0,0],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.dockerPort",["loc",[null,[251,14],[251,42]]],0,0,0,0]],[],[],0,0],"maxlength",5],["loc",[null,[249,8],[253,10]]],0,0],
       ["inline","input",[],["type","text","class","form-control","value",["subexpr","@mut",[["get","model.p2pubConfig.extraPorts",["loc",[null,[264,14],[264,42]]],0,0,0,0]],[],[],0,0]],["loc",[null,[262,8],[265,10]]],0,0],
       ["inline","partial",["host/add-options"],[],["loc",[null,[272,4],[272,34]]],0,0],

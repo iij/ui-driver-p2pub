@@ -232,15 +232,15 @@
     </div>
     <div class="row form-group">
       <div class="col-md-2 form-label">
-        <label class="form-control-static">Private Mode</label>
+        <label class="form-control-static">Private NW Only</label>
       </div>
       <div class="col-md-4">
         {{input type="text"
         class="form-control"
-        value=model.%%DRIVERNAME%%Config.privateMode
+        value=model.%%DRIVERNAME%%Config.privateOnly
         placeholder="X.X.X.X,Y.Y.Y.Y"
         }}
-        <p class="help-block">Does not attach global IP address. Specify a private IP address and a DNS server like this format "Private IP address, DNS Server IP address".</p>
+        <p class="help-block">Specify a private IP address and a DNS server like this format "Private IP address, DNS Server IP address". If this option specified, global IP address is not attached.</p>
       </div>
       <div class="col-md-2 form-label">
         <label class="form-control-static">Docker Port</label>
